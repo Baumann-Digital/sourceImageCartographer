@@ -38,3 +38,60 @@ declare function app:getMeasureCoordVariables($node as node(), $model as item()*
         <input type="hidden" id="measureCoordUri" value="{$uri}"/>
     </div>
 };
+
+declare function app:overview($node as node(), $model as item()*) {
+   
+    let $basePath := '/db/apps/rwaEncycloData/contents/sources'
+    let $collEditions := collection($basePath || '/music/editions')//mei:mei
+    let $collPrints := collection($basePath || '/music/prints')//mei:mei
+    let $collManuscripts := collection($basePath || '/music/manuscripts')//mei:mei
+    let $collTextSource := collection($basePath || '/text')//tei:TEI/id(not(starts-with(., 'txt')))
+    
+    return
+        <div>
+            <h1>Source files (Editions)</h1>
+            <ul>
+            {for $file in $collEditions
+                let $id := $file/string(@xml:id)
+                let $uri := document-uri($file/root())
+                let $cartoLink := concat('https://exist-dev-intern.max-reger-institut.de/exist/apps/edirom/sourceImageCartographer/index.html?uri=', $uri)
+                order by $id
+                return
+                    <li><a href="{$cartoLink}">{$id}</a></li>
+            }
+            </ul>
+            <h1>Source files (Manuscripts)</h1>
+            <ul>
+            {for $file in $collManuscripts
+                let $id := $file/string(@xml:id)
+                let $uri := document-uri($file/root())
+                let $cartoLink := concat('https://exist-dev-intern.max-reger-institut.de/exist/apps/edirom/sourceImageCartographer/index.html?uri=', $uri)
+                order by $id
+                return
+                    <li><a href="{$cartoLink}">{$id}</a></li>
+            }
+            </ul>
+            <h1>Source files (Prints)</h1>
+            <ul>
+            {for $file in $collPrints
+                let $id := $file/string(@xml:id)
+                let $uri := document-uri($file/root())
+                let $cartoLink := concat('https://exist-dev-intern.max-reger-institut.de/exist/apps/edirom/sourceImageCartographer/index.html?uri=', $uri)
+                order by $id
+                return
+                    <li><a href="{$cartoLink}">{$id}</a></li>
+            }
+            </ul>
+            <h1>Source files (textSource)</h1>
+            <ul>
+            {for $file in $collTextSource
+                let $id := $file/string(@xml:id)
+                let $uri := document-uri($file/root())
+                let $cartoLink := concat('https://exist-dev-intern.max-reger-institut.de/exist/apps/edirom/sourceImageCartographer/index.html?uri=', $uri)
+                order by $id
+                return
+                    <li><a href="{$cartoLink}">{$id}</a></li>
+            }
+            </ul>
+        </div>
+};
