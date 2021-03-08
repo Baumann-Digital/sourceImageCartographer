@@ -1,9 +1,12 @@
-xquery version "3.0";
+xquery version "3.1";
 
 module namespace app="http://www.edirom.de/apps/sourceImageCartographer/templates";
 
 import module namespace templates="http://exist-db.org/xquery/templates" ;
 import module namespace config="http://www.edirom.de/apps/sourceImageCartographer/config" at "config.xqm";
+
+declare namespace mei="http://www.music-encoding.org/ns/mei";
+declare namespace tei="http://www.tei-c.org/ns/1.0";
 
 (:~
  : This is a sample templating function. It will be called by the templating module if
