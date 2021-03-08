@@ -1,9 +1,9 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <project default="xar" name="edirom-sourceImageCartographer">
     <property name="project.version" value="0.1.0-beta"/>
     <property name="project.app" value="edirom-sourceImageCartographer"/>
     <property name="build.dir" value="build"/>
-    <property name="digilib.server" value="" />
+    <property name="digilib.server" value="https://rwa-dev-intern.max-reger-institut.de/docuserv/" />
 
     <target name="clean">
         <delete dir="${build.dir}" includeemptydirs="true"/>
