@@ -1,10 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <meta xmlns="http://exist-db.org/xquery/repo">
     <description>edirom:sourceImageCartographer</description>
     <author>Benjamin W. Bohl</author>
     <author>Daniel Röwenstrunk</author>
     <author>Johannes Kepper</author>
     <author>Nikolaos Beer</author>
+    <author>Dennis Ried</author>
     <website>https://github.com/Edirom/sourceImageCartographer</website>
     <status>alpha</status>
     <license>GNU-LGPL</license>
@@ -13,5 +14,5 @@
     <target>edirom/sourceImageCartographer</target>
     <prepare>pre-install.xql</prepare>
     <finish/>
-    <permissions xmlns:repo="http://exist-db.org/xquery/repo" user="edirom" group="edirom" mode="rwxr-xr--"/>
+    <permissions xmlns:repo="http://exist-db.org/xquery/repo" user="edirom" group="edirom" mode="rwxrwxrwx"/>
 </meta>
